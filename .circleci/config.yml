@@ -13,15 +13,17 @@ jobs:
 
   test:
     <<: *docker_img
-    - checkout
-    - run: npm i
-    - run: npm run test
+    steps:
+      - checkout
+      - run: npm i
+      - run: npm run test
 
   analyze:
     <<: *docker_img
-    - checkout
-    - run: npm i
-    - run: npm run audit
+    steps:
+      - checkout
+      - run: npm i
+      - run: npm run audit
 
 
 workflows:
